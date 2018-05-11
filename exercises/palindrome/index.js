@@ -7,18 +7,46 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {
-	debugger;
-	const reversed = str.split('').reverse().join('');
+// Solution One
+// function palindrome(str) {
+// 	const reversed = str.split('').reverse().join('');
 
-	if(str === reversed){
-		return true;
+// 	if(str === reversed){
+// 		return true;
+// 	}
+// 	else if(str !== reversed){
+// 		return false;
+// 	}
+// }
+
+// Solution Two
+palindrome = (str) => {
+	const toLowerCase = str.toLowerCase();
+	const trim = toLowerCase.replace(/\s+/g, '');
+	const splitStr = trim.split('');
+	const arr = [];
+
+	for(let i = splitStr.length - 1; i !== -1; i--){
+		arr.push(splitStr[i]);
 	}
-	else if(str !== reversed){
-		return false;
+
+	if(arr.length === splitStr.length) {
+		arr.join('');
+		splitStr.join('');
+
+		if(arr !== splitStr) {
+			return false;
+		}
+		else if(arr == splitStr) {
+			return true;
+		}
+
+		console.log("split", splitStr);
+		console.log("arr", arr);
 	}
+	console.log('end');
 }
 
-palindrome("dog");
+palindrome("pennep");
 
 module.exports = palindrome;
