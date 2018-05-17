@@ -10,7 +10,6 @@
 
 // Solution One
 function reverseInt(n) {
-	var sign = Math.sign(n);
 	var string = n.toString().split('').reverse().join('');
 
 	return parseInt(string) * Math.sign(n);
