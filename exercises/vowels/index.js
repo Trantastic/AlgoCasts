@@ -7,6 +7,18 @@
 //   vowels('Why do you ask?') --> 4
 //   vowels('Why?') --> 0
 
-function vowels(str) {}
+// Solution One
+function vowels(str) {
+	var counter = 0;
+	var toLower = str.toLowerCase();
+	var arr = toLower.split("");
+
+	for(var i = 0; i < arr.length; i++) {
+		if(arr[i].includes("a") || arr[i].includes("e") || arr[i].includes("i") || arr[i].includes("o") || arr[i].includes("u")) {
+			counter++;
+		}
+	}
+	return counter;
+}
 
 module.exports = vowels;
