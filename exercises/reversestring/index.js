@@ -27,14 +27,24 @@
 // }
 
 // Solution Three
-function reverse(str) {
-	var arr = str.split("");
-	var reversed = [];
+// function reverse(str) {
+// 	var arr = str.split("");
+// 	var reversed = [];
 
-	for(var i = 0; i < arr.length; i++){
-		reversed.unshift(arr[i]);
+// 	for(var i = 0; i < arr.length; i++){
+// 		reversed.unshift(arr[i]);
+// 	}
+// 	return reversed.join("");
+// }
+
+// Solution Four
+function reverse(str) {
+	var reversed = "";
+
+	for(let char of str) {
+		reversed = char + reversed
 	}
-	return reversed.join("");
+	return reversed;
 }
 
 module.exports = reverse;
