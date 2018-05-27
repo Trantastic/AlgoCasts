@@ -11,19 +11,30 @@
 // 	var splitStr = str.split('');
 
 // 	return splitStr.reverse().join('');
-// };
+// }
 
 // Solution Two
+// function reverse(str) {
+// 	var splitStr = str.split('');
+// 	var arrHolder = [];
+
+// 	for(var i = splitStr.length - 1; i >= 0; i--){
+// 		arrHolder.push(splitStr[i]);
+// 	}
+
+// 	var reversed = arrHolder.join('');
+// 	return reversed;
+// }
+
+// Solution Three
 function reverse(str) {
-	var splitStr = str.split('');
-	var arrHolder = [];
+	var arr = str.split("");
+	var reversed = [];
 
-	for(var i = splitStr.length - 1; i >= 0; i--){
-		arrHolder.push(splitStr[i]);
+	for(var i = 0; i < arr.length; i++){
+		reversed.unshift(arr[i]);
 	}
-
-	var reversed = arrHolder.join('');
-	return reversed;
-};
+	return reversed.join("");
+}
 
 module.exports = reverse;
