@@ -20,33 +20,19 @@
 // }
 
 // Solution Two
-palindrome = (str) => {
-	const toLowerCase = str.toLowerCase();
-	const trim = toLowerCase.replace(/\s+/g, '');
-	const splitStr = trim.split('');
-	const arr = [];
+function palindrome(str) {
+	let reverse = "";
 
-	for(let i = splitStr.length - 1; i !== -1; i--){
-		arr.push(splitStr[i]);
+	for(let char of str) {
+		reverse = char + reverse;
 	}
 
-	if(arr.length === splitStr.length) {
-		arr.join('');
-		splitStr.join('');
-
-		if(arr !== splitStr) {
-			return false;
-		}
-		else if(arr == splitStr) {
-			return true;
-		}
-
-		console.log("split", splitStr);
-		console.log("arr", arr);
+	if(reverse === str) {
+		return true;
 	}
-	console.log('end');
+	else {
+		return false;
+	}
 }
-
-palindrome("pennep");
 
 module.exports = palindrome;
